@@ -1,0 +1,16 @@
+---
+
+applications:
+
+- name: simple-crm-example-mysql
+  memory: 512M
+  buildpack: java_buildpack
+  path: target/demo-1.jar
+  instances: 1
+  random-route: false
+  route: simple-crm-example-mysql
+  host: simple-crm-example-mysql
+  services:
+    - mysql
+  env:
+    SPRING_PROFILES_ACTIVE: pcf
